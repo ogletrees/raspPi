@@ -23,11 +23,13 @@ delay = 1
 
 with open('data.csv', 'w', newline='') as f:
     data_writer = writer(f)
-    dt = data[-1] - timestamp
-    it dt.seconds > delay:
-        data_writer.writerow(['temp','hum','press','datetime'])
-        timestamp = datetime.now()
+    data_writer.writerow(['temp','hum','press','datetime'])
+
     while True:
         data = get_sense_data()
-        data_write.writerow(data)
+        dt = data[-1] - timestamp
+        if dt.seconds > delay:
+            data_write.writerow(data)
+            timestamp = datetime.now()
+        
 
