@@ -13,4 +13,5 @@ def get_sense_data():
   sense_data.append(acc["y"])
   sense_data.append(acc["z"])
   sense_data.append(datetime.now())
+    
   return sense_data
