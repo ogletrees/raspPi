@@ -15,3 +15,6 @@ def get_sense_data():
     sense_data.append(datetime.now())
     
     return sense_data
+
+while True:
+    print(get_sense_data())
