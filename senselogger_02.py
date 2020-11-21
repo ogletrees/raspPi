@@ -29,7 +29,7 @@ with open('data.csv', 'w', newline='') as f:
         data = get_sense_data()
         dt = data[-1] - timestamp
         if dt.seconds > delay:
-            data_write.writerow(data)
+            data_writer.writerow(data)
             timestamp = datetime.now()
         
 
