@@ -4,11 +4,11 @@ import time
 import board
 
 # --------- User Settings ---------
-SENSOR_LOCATION_NAME = "Office"
-BUCKET_NAME = ":partly_sunny: Room Temperatures"
-BUCKET_KEY = "dht22sensor"
+SENSOR_LOCATION_NAME = "home"
+BUCKET_NAME = ":exp_sensors: Room Temperatures"
+BUCKET_KEY = "UM6MH8GF5YEK"
 ACCESS_KEY = "ENTER ACCESS KEY HERE"
-MINUTES_BETWEEN_READS = 10
+MINUTES_BETWEEN_READS = 2
 METRIC_UNITS = False
 # ---------------------------------
 
