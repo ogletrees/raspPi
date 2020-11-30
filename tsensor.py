@@ -7,7 +7,7 @@ import board
 SENSOR_LOCATION_NAME = "home"
 BUCKET_NAME = ":exp_sensors: Room Temperatures"
 BUCKET_KEY = "UM6MH8GF5YEK"
-ACCESS_KEY = "ist_1KKpRITcNqFaltno_JivetG27g3RXYmM"
+ACCESS_KEY = ""
 MINUTES_BETWEEN_READS = 2
 METRIC_UNITS = False
 # ---------------------------------
