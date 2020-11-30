@@ -7,7 +7,7 @@ import board
 SENSOR_LOCATION_NAME = "home"
 BUCKET_NAME = ":exp_sensors: Room Temperatures"
 BUCKET_KEY = "UM6MH8GF5YEK"
-ACCESS_KEY = "ENTER ACCESS KEY HERE"
+ACCESS_KEY = "ist_1KKpRITcNqFaltno_JivetG27g3RXYmM"
 MINUTES_BETWEEN_READS = 2
 METRIC_UNITS = False
 # ---------------------------------
@@ -26,7 +26,7 @@ while True:
         if METRIC_UNITS:
                 streamer.log(SENSOR_LOCATION_NAME + " Temperature(C)", temp_c)
         else:
-                temp_f = format(temp_c * 9.0 / 5.0 + 32.0, ".2f")
+                temp_f = temp_c * 9.0 / 5.0 + 32.0
                 streamer.log(SENSOR_LOCATION_NAME + " Temperature(F)", temp_f)
         humidity = format(humidity,".2f")
         streamer.log(SENSOR_LOCATION_NAME + " Humidity(%)", humidity)
