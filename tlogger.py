@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import os
 import re
+import datetime
 
 GPIO.setwarnings(True)
 GPIO.setmode(GPIO.BCM)
@@ -17,13 +18,15 @@ def getTemps():
       ow_devtext = ow_devfile.readlines()
       ow_temp = ow_retemp.search(ow_devtext[1])
       allTemps.append(ow_temp.group(1))
-  return(allTemps)
+   return(allTemps)
   
 try:
   while True:
     allTemps = getTemps()
     ntemp = float(allTemps[0]/1000)
-    print(ntemp)
+    dt = datetime.now()
+    print(ntemp.append(dt))
+
 except KeyboardInterrupt:
   print("Cleanup")
   GPIO.cleanup()
