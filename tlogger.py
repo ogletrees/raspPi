@@ -13,7 +13,7 @@ def getTemps():
   ow_retemp = re.compile('t=(\d*)')
   for thistring in ow_devices:
     if(thistring.startswith("28")):
-      ow_path = os.path.join(ow_basedir, thistring. "w1_slave")
+      ow_path = os.path.join(ow_basedir, thistring, "w1_slave")
       ow_devfile = open(ow_path, "r")
       ow_devtext = ow_devfile.readlines()
       ow_temp = ow_retemp.search(ow_devtext[1])
