@@ -30,15 +30,23 @@ with open('data_' + dt_string + '.csv', 'w') as f:
     data_writer = writer(f)
     data_writer.writerow(['temp','datetime'])
   
+#try:
+#  while True:
+#    allTemps = getTemps()
+#    ntemp = float(allTemps[0]/1000)
+#    dtt = datetime.now()
+#    vals = str(ntemp) + ', ' + dt.strftime("%Y-%m-%d %H:%M:%S.%f")
+#    data_writer.writerow(vals)
+#    print(vals)
+
 try:
   while True:
     allTemps = getTemps()
-    ntemp = float(allTemps[0]/1000)
+    #ntemp = float(allTemps[0]/1000)
     dtt = datetime.now()
-    vals = str(ntemp) + ', ' + dt.strftime("%Y-%m-%d %H:%M:%S.%f")
-    data_writer.writerow(vals)
-    print(vals)
-
+    #vals = str(ntemp) + ', ' + dt.strftime("%Y-%m-%d %H:%M:%S.%f")
+    print(allTemps)   
+    
 except KeyboardInterrupt:
   print("Cleanup")
   GPIO.cleanup()
