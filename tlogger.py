@@ -3,6 +3,7 @@ import os
 import re
 from csv import writer
 from datetime import datetime
+import time
 
 
 
@@ -21,33 +22,38 @@ def getTemps():
       ow_devtext = ow_devfile.readlines()
       ow_temp = ow_retemp.search(ow_devtext[1])
       allTemps.append(ow_temp.group(1))
-    return(allTemps)
+  return(allTemps)
 
 dt = datetime.now()
 dt_string = dt.strftime("%Y%m%d_%H%M")
 
-with open('data_' + dt_string + '.csv', 'w') as f:
+with open('data_' + dt_string + '.csv', 'w', newline = '') as f:
     data_writer = writer(f)
     data_writer.writerow(['temp','datetime'])
   
+    try:
+      while True:
+        allTemps = getTemps()
+        #recs = []
+        #ntemp = float(allTemps[0])/1000
+        dtt = datetime.now()
+        vals = dtt.strftime("%Y-%m-%d %H:%M:%S.%f") 
+        #recs.append(ntemp)
+        allTemps.append(vals)
+        #print(recs)
+        data_writer.writerow(allTemps)
+        print(allTemps)
+        time.sleep(5)
+
 #try:
 #  while True:
 #    allTemps = getTemps()
-#    ntemp = float(allTemps[0]/1000)
+#    #ntemp = float(allTemps[0]/1000)
 #    dtt = datetime.now()
-#    vals = str(ntemp) + ', ' + dt.strftime("%Y-%m-%d %H:%M:%S.%f")
-#    data_writer.writerow(vals)
-#    print(vals)
-
-try:
-  while True:
-    allTemps = getTemps()
-    #ntemp = float(allTemps[0]/1000)
-    dtt = datetime.now()
-    #vals = str(ntemp) + ', ' + dt.strftime("%Y-%m-%d %H:%M:%S.%f")
-    print(allTemps)   
+#    #vals = str(ntemp) + ', ' + dt.strftime("%Y-%m-%d %H:%M:%S.%f")
+#    print(allTemps)   
     
-except KeyboardInterrupt:
-  print("Cleanup")
-  GPIO.cleanup()
+    except KeyboardInterrupt:
+      print("Cleanup")
+      GPIO.cleanup()
   
