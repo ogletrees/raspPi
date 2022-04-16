@@ -22,4 +22,4 @@ def getTemps():
       ow_devtext = ow_devfile.readlines()
       ow_temp = ow_retemp.search(ow_devtext[1])
       allTemps.append(ow_temp.group(1))
-  return(allTemps)
+  print(allTemps)
