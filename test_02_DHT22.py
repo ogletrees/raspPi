@@ -2,6 +2,7 @@ import Adafruit_DHT
 import time
 from datetime import datetime
 from csv import writer
+
 sensor = Adafruit_DHT.DHT22
 pin = 11
 # humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
