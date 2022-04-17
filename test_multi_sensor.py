@@ -48,7 +48,7 @@ try:
             # print(pwm_values)
             # average_temp = sum(pwm_values) / len(pwm_values)
             # pwmToMeter.ChangeDutyCycle(average_temp)
-            TempC = all_temps/1000
+            TempC = [float(i)/1000 for i in all_temps]
             print("Raw sensor: ", TempC, "C")
 
 except KeyboardInterrupt:

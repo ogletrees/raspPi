@@ -27,9 +27,9 @@ def getTemps():
 dt = datetime.now()
 dt_string = dt.strftime("%Y%m%d_%H%M")
 
-with open('data_' + dt_string + '.csv', 'w', newline = '') as f:
+with open('data/data_' + dt_string + '.csv', 'w', newline = '') as f:
     data_writer = writer(f)
-    data_writer.writerow(['temp','datetime'])
+    data_writer.writerow(['temp','temp','datetime'])
   
     try:
       while True:
