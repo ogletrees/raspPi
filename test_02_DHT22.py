@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 from csv import writer
 sensor = Adafruit_DHT.DHT22
-pin = 4
+pin = 11
 # humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 
 #while True:
@@ -20,7 +20,7 @@ pin = 4
 dt = datetime.now()
 dt_string = dt.strftime("%Y%m%d_%H%M")
 
-with open('data_' + dt_string + '.csv', 'w', newline='') as f:
+with open('data/dataDHT_' + dt_string + '.csv', 'w', newline='') as f:
     data_writer = writer(f)
     data_writer.writerow(['temp','hum','datetime'])
 
@@ -28,10 +28,12 @@ with open('data_' + dt_string + '.csv', 'w', newline='') as f:
         humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
         
         if humidity is not None and temperature is not None:
+            temp_c = temperature
             temp_f = temperature * 9.0 / 5.0 + 32.0
             dt1 = datetime.now()
             sense_data = []
-            sense_data.append(temp_f)
+            sense_data.append(temp_c)
+            # sense_data.append(temp_f)
             sense_data.append(humidity)
             sense_data.append(dt1.strftime("%Y-%m-%d %H:%M:%S.%f"))
             data_writer.writerow(sense_data)

@@ -4,8 +4,7 @@ import re
 from csv import writer
 from datetime import datetime
 import time
-
-
+# run in python3
 
 GPIO.setwarnings(True)
 GPIO.setmode(GPIO.BCM)

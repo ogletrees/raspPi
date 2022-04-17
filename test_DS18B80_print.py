@@ -5,8 +5,6 @@ from csv import writer
 from datetime import datetime
 import time
 
-
-
 GPIO.setwarnings(True)
 GPIO.setmode(GPIO.BCM)
 

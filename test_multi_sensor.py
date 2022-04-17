@@ -1,6 +1,5 @@
 # read the ds18b20 one-wire temperature sensor
 # 
-
 import RPi.GPIO as GPIO
 import os
 import re
@@ -49,7 +48,7 @@ try:
             # average_temp = sum(pwm_values) / len(pwm_values)
             # pwmToMeter.ChangeDutyCycle(average_temp)
             TempC = [float(i)/1000 for i in all_temps]
-            print("Raw sensor: ", TempC, "C")
+            print("Raw sensor: " + str(TempC[0]) + "ºC ----- , " + str(TempC[1]) + "ºC)
 
 except KeyboardInterrupt:
     print("Cleanup")
