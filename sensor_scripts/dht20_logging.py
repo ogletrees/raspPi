@@ -12,7 +12,7 @@ i2c = board.I2C()
 sensor = adafruit_ahtx0.AHTx0(i2c)
 
 # File path for the CSV file
-# csv_file = ".data./data_dht20.csv"
+# csv_file = "./data/data_dht20.csv"
 
 # Function to log temperature and humidity data to a CSV file
 #def log_data_to_csv(temperature, humidity):
