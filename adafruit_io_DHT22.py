@@ -7,7 +7,7 @@ from Adafruit_IO import Client
 # import board
 sensor = Adafruit_DHT.DHT22
 pin = 11
-aio = Client('sogletree', 'aio_EwKE20IIihyngZPf6nGwghzmAdCT')
+aio = Client('sogletree', 'key')
 
 dt = datetime.now()
 dt_string = dt.strftime("%Y%m%d_%H%M")
