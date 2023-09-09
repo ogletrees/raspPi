@@ -12,13 +12,13 @@ i2c = board.I2C()
 sensor = adafruit_ahtx0.AHTx0(i2c)
 
 # File path for the CSV file
-csv_file = "/path/to/your/data.csv"
+# csv_file = ".data./data_dht20.csv"
 
 # Function to log temperature and humidity data to a CSV file
-def log_data_to_csv(temperature, humidity):
-    with open(csv_file, mode='a') as file:
-        writer = csv.writer(file)
-        writer.writerow([time.strftime('%Y-%m-%d %H:%M:%S'), temperature, humidity])
+#def log_data_to_csv(temperature, humidity):
+#    with open(csv_file, mode='a') as file:
+#        writer = csv.writer(file)
+#        writer.writerow([time.strftime('%Y-%m-%d %H:%M:%S'), temperature, humidity])
 
 # Main loop
 while True:
@@ -27,10 +27,11 @@ while True:
         humidity = sensor.relative_humidity
 
         # Log the data to the CSV file
-        log_data_to_csv(temperature, humidity)
+        #log_data_to_csv(temperature, humidity)
+        print(temperature, humidity)
 
         # Wait for 5 minutes before reading data again
-        time.sleep(300)
+        time.sleep(10)
     except KeyboardInterrupt:
         # Exit the loop if Ctrl+C is pressed
         break
