@@ -12,7 +12,7 @@ aio = Client('sogletree', 'aio_EwKE20IIihyngZPf6nGwghzmAdCT')
 dt = datetime.now()
 dt_string = dt.strftime("%Y%m%d_%H%M")
 
-with open('data/dataDHT_' + dt_string + '.csv', 'w', newline='') as f:
+with open('/home/pi/data/dataDHT_' + dt_string + '.csv', 'w', newline='') as f:
     data_writer = writer(f)
     data_writer.writerow(['temp','humid','datetime'])
 
@@ -35,8 +35,8 @@ with open('data/dataDHT_' + dt_string + '.csv', 'w', newline='') as f:
             data_writer.writerow(['999.99','999.9',dte.strftime("%Y-%m-%d %H:%M:%S.%f")])
             print(['999.99','999.9',dte])
             
-        humfeed = aio.feeds('roomhumidity')
+        humfeed = aio.feeds('humidity')
         aio.send_data(humfeed.key, humidity)        
-        tempfeed = aio.feeds('roomtemperature')
-        aio.send_data(tempfeed.key, round(temperature,2))    
+        tempfeed = aio.feeds('temperature')
+        aio.send_data(tempfeed.key, round(temp_f,2))    
         time.sleep(30)
