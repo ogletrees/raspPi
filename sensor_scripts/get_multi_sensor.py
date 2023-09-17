@@ -62,5 +62,9 @@ while True:
     humidity = sensor.relative_humidity
         
     print(temperature, humidity)
-    time.sleep(5)
+    
+    alldata = allTemps.append(str(round(temperature, 2)))
+    print(alldata)
+    
+    time.sleep(10)
 
