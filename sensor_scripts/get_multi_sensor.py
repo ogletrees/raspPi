@@ -46,7 +46,7 @@ dt = datetime.now()
 dt_string = dt.strftime("%Y%m%d_%H%M%S")
 
 
-  while True:
+while True:
     allTemps = getTemps() # 1wire
     #recs = []
     #ntemp = float(allTemps[0])/1000
@@ -55,7 +55,7 @@ dt_string = dt.strftime("%Y%m%d_%H%M%S")
     #recs.append(ntemp)
     allTemps.append(vals)
     #print(recs)
-    data_writer.writerow(allTemps)
+    # data_writer.writerow(allTemps)
     print(allTemps)
     
     temperature = sensor.temperature
