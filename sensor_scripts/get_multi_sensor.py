@@ -48,6 +48,8 @@ dt_string = dt.strftime("%Y%m%d_%H%M%S")
 
 while True:
     allTemps = getTemps() # 1wire
+    print("raw 1wire -" + allTemps)
+    
     temperature = round(sensor.temperature, 2)
     humidity = round(sensor.relative_humidity, 2)
     
