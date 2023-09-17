@@ -59,7 +59,7 @@ while True:
     print(allTemps)
     
     temperature = round(sensor.temperature, 2)
-    humidity = sensor.relative_humidity
+    humidity = round(sensor.relative_humidity, 2)
         
     print(temperature, humidity)
     
