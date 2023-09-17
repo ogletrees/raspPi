@@ -58,13 +58,13 @@ while True:
     # data_writer.writerow(allTemps)
     print(allTemps)
     
-    temperature = sensor.temperature
+    temperature = round(sensor.temperature, 2)
     humidity = sensor.relative_humidity
         
     print(temperature, humidity)
     
-    alldata = allTemps.append(str(round(temperature, 2)))
-    print(alldata)
+    # alldata = allTemps.append(str(round(temperature, 2)))
+    # print(alldata)
     
     time.sleep(10)
 
