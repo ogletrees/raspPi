@@ -48,23 +48,24 @@ dt_string = dt.strftime("%Y%m%d_%H%M%S")
 
 while True:
     allTemps = getTemps() # 1wire
-    #recs = []
-    #ntemp = float(allTemps[0])/1000
+    temperature = round(sensor.temperature, 2)
+    humidity = round(sensor.relative_humidity, 2)
+    
     dtt = datetime.now()
-    vals = dtt.strftime("%Y-%m-%d %H:%M:%S.%f") 
-    #recs.append(ntemp)
+    vals = dtt.strftime("%Y-%m-%d %H:%M:%S")
+    allTemps.append(temperature)
+    allTemps.append(humidity)
     allTemps.append(vals)
     #print(recs)
     # data_writer.writerow(allTemps)
     print(allTemps)
     
-    temperature = round(sensor.temperature, 2)
-    humidity = round(sensor.relative_humidity, 2)
+
         
-    print(temperature, humidity)
-    # print(type(temperature))
-    allTemps.append(temperature)
-    print(allTemps)
+#     print(temperature, humidity)
+#     # print(type(temperature))
+#     allTemps.append(temperature)
+#     print(allTemps)
     
     time.sleep(10)
 
