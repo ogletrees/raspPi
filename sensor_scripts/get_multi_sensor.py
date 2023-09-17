@@ -49,8 +49,8 @@ dt_string = dt.strftime("%Y%m%d_%H%M%S")
 while True:
     allTemps = getTemps() # 1wire
     allTemps = [int(i) for i in allTemps]
-    allTemps = [x//1000 for x in allTemps]
-    
+    allTemps = [x/1000 for x in allTemps]
+    allTemps = [round(x, 2) for x in allTemps]
     temperature = round(sensor.temperature, 2)
     humidity = round(sensor.relative_humidity, 2)
     
