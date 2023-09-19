@@ -83,5 +83,5 @@ while True:
 #     allTemps.append(temperature)
 #     print(allTemps)
     
-    time.sleep(10)
+    time.sleep(300)
 
