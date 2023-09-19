@@ -7,7 +7,7 @@ import csv
 import board
 import adafruit_ahtx0
 from Adafruit_IO import Client
-import ~/storage/creds
+
 
 import RPi.GPIO as GPIO
 import os
@@ -15,7 +15,7 @@ import re
 # from csv import writer
 from datetime import datetime
 
-aio_key = creds.api_key
+aio_key = os.environ('AIO_KEY')
 aio = Client('sogletree', aio_key)
 
 # Initialize the AHT20 sensor
