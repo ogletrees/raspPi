@@ -15,7 +15,7 @@ import re
 # from csv import writer
 from datetime import datetime
 
-aio_key = os.environ('AIO_KEY')
+aio_key = os.getenv('AIO_KEY')
 aio = Client('sogletree', aio_key)
 
 # Initialize the AHT20 sensor
